@@ -1,0 +1,22 @@
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+start_project
+restart_project
+ecosystem.config.js.old
+ecosystem.config.js
+package-lock.json
+yarn.lock

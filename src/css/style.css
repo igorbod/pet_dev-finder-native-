@@ -7,6 +7,12 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-accent: tomato;
+
+    --color-bg-black: #12101A;
+    --color-bg-blue: #06136b;
+
+    /* other */
+    --app-container-max-width: 120rem;
 }
 
 /* Base */
@@ -14,8 +20,27 @@ html {
     font-size: 10px;
     font-weight: var(--fw-default);
     font-family: var(--font-default);
+    width: 100%;
+    height: 100%;
 }
 
 body {
     font-size: 1.6rem;
+    color: var(--color-white);
+    background: var(--color-bg-black);
+    background: -webkit-linear-gradient(45deg, var(--color-bg-black), var(--color-bg-blue));
+    background: linear-gradient(45deg, var(--color-bg-black), var(--color-bg-blue));
+    width: 100%;
+    height: 100%;
+}
+
+.df-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: var(--app-container-max-width);
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 5rem;
 }

@@ -19,34 +19,100 @@
 </head>
 <body>
 <div class="df-app">
-	<div class="df-container">
-		<header class="df-header">
-			<h1 class="df-header__title">Dev finder</h1>
-			<div class="df-theme-switcher">
-				<span class="df-theme-switcher__title">Dark</span>
-				<div class="df-theme-switcher__icon-box">
-					<img class="df-theme-switcher__icon" src="assets/icon-theme-dark.svg" alt="" >
-					<img class="df-theme-switcher__icon" src="assets/icon-theme-light.svg" alt="" >
+	<header class="df-header">
+		<h1 class="df-header__title">Dev finder</h1>
+		<div class="df-theme-switcher">
+			<span class="df-theme-switcher__title">Dark</span>
+			<div class="df-theme-switcher__icon-box">
+				<img class="df-theme-switcher__icon" src="assets/icons/icon-theme-dark.svg" alt="" >
+				<img class="df-theme-switcher__icon" src="assets/icons/icon-theme-light.svg" alt="" >
+			</div>
+		</div>
+	</header>
+	<main class="df-main">
+
+		<!-- begin:Search panel -->
+		<div class="df-search">
+			<img class="df-search__icon" src="assets/icons/icon-search.svg" alt="">
+			<label class="df-search__input-label">
+				<input name="df_search" id="df_search" type="text" placeholder="Search GitHub username...">
+			</label>
+			<button class="df-button" type="button">
+				<span class="df-button__title">Search</span>
+			</button>
+		</div>
+		<!-- end:Search panel -->
+
+		<!-- begin:User card -->
+		<div class="df-card">
+			<div class="df-card__inner">
+				<div class="df-card__col">
+					<div class="df-card__header">
+						<ul class="df-card__stats-list">
+							<li class="df-card__stats-item">
+								<img class="df-card__stats-icon" src="assets/icons/icon-stats__repos.svg" alt="">
+								<span class="df-card__stats-title">394 Repos</span>
+							</li>
+							<li class="df-card__stats-item">
+								<img class="df-card__stats-icon" src="assets/icons/icon-stats__followers.svg" alt="">
+								<span class="df-card__stats-title">1257 Followers</span>
+							</li>
+							<li class="df-card__stats-item">
+								<img class="df-card__stats-icon" src="assets/icons/icon-stats__following.svg" alt="">
+								<span class="df-card__stats-title">15 Followers</span>
+							</li>
+						</ul>
+					</div>
+					<div class="df-card__user-name-wr">
+						<h1 class="df-card__user-name">Igor Bodyagin</h1>
+						<a href="#" class="df-card__user-link-wr">
+							<div class="df-card__user-link-img-wr">
+								<img src="assets/icons/icon-github.svg" alt="" class="df-card__user-link-img">
+							</div>
+							<span class="df-card__user-nickname">@igorbod</span>
+						</a>
+					</div>
+					<div class="df-card__user-bio">
+						Just say anything, George, say what ever's natural, the first thing that comes to your mind. Take that you
+						mutated son-of-a-bitch. My pine, why you. You space bastard, you killed a pine. You do? Yeah, it's 8:00.
+						Hey, McFly, I thought I told you never to come in here. Well it's gonna cost you. How much money you got on
+						you?
+					</div>
+					<div class="df-card__buttons">
+						<a href="#" class="df-button">
+							<span class="df-button__title">Go to profile</span>
+						</a>
+					</div>
+					<div class="df-card__extra-info">
+						<ul class="df-card__extra-info-list">
+							<li class="df-card__extra-info-item">
+								<span class="df-card__extra-info-title">Location</span>
+								<span class="df-card__extra-info-value">Russia</span>
+							</li>
+							<li class="df-card__extra-info-item">
+								<span class="df-card__extra-info-title">Twitter</span>
+								<span class="df-card__extra-info-value">Not available</span>
+							</li>
+							<li class="df-card__extra-info-item">
+								<span class="df-card__extra-info-title">Blog</span>
+								<a href="#" class="df-card__extra-info-value">htps://github.blog</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="df-card__col">
+					<div class="df-card__joined">
+						<span>Joined</span>
+						<time datetime="2020-10-1">January 10 2020</time>
+					</div>
+					<div class="df-card__user-photo-wr">
+						<img class="df-card__user-photo" src="assets/images/user-photo.png" alt="">
+					</div>
 				</div>
 			</div>
-		</header>
-
-		<main class="df-main">
-			<div class="df-search">
-				<img class="df-search__icon" src="assets/icon-search.svg" alt="">
-				<label class="df-search__input-label">
-					<input name="df_search" id="df_search" type="text" placeholder="Search GitHub username...">
-				</label>
-				<button class="df-button" type="button">
-					<span class="df-button__title">Search</span>
-				</button>
-			</div>
-		</main>
-
-		<footer class="df-footer">
-
-		</footer>
-	</div>
+		</div>
+		<!-- end:User card -->
+	</main>
 </div>
 
 <script src="scripts.js"></script>

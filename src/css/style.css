@@ -1,0 +1,21 @@
+:root {
+    /* fonts */
+    --font-default: "Poppins", sans-serif;
+    --fw-default: 400;
+
+    /* colors */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-accent: tomato;
+}
+
+/* Base */
+html {
+    font-size: 10px;
+    font-weight: var(--fw-default);
+    font-family: var(--font-default);
+}
+
+body {
+    font-size: 1.6rem;
+}

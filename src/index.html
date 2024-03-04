@@ -1,15 +1,54 @@
 <!doctype html>
 <html lang="en">
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport"
-								content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<link rel="stylesheet" href="style.css">
-		<title>Dev finder pet project</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!--	Fonts	-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<title>Dev finder pet project</title>
 </head>
 <body>
+<div class="df-app">
+	<div class="df-container">
+		<header class="df-header">
+			<h1 class="df-header__title">Dev finder</h1>
+			<div class="df-theme-switcher">
+				<span class="df-theme-switcher__title">Dark</span>
+				<div class="df-theme-switcher__icon-box">
+					<img class="df-theme-switcher__icon" src="assets/icon-theme-dark.svg" alt="" >
+					<img class="df-theme-switcher__icon" src="assets/icon-theme-light.svg" alt="" >
+				</div>
+			</div>
+		</header>
 
-		<script src="scripts.js"></script>
+		<main class="df-main">
+			<div class="df-search">
+				<img class="df-search__icon" src="assets/icon-search.svg" alt="">
+				<label class="df-search__input-label">
+					<input name="df_search" id="df_search" type="text" placeholder="Search GitHub username...">
+				</label>
+				<button class="df-button" type="button">
+					<span class="df-button__title">Search</span>
+				</button>
+			</div>
+		</main>
+
+		<footer class="df-footer">
+
+		</footer>
+	</div>
+</div>
+
+<script src="scripts.js"></script>
 </body>
 </html>

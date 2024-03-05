@@ -13,6 +13,7 @@
 
     /* other */
     --app-container-max-width: 120rem;
+
 }
 
 /* Base */
@@ -34,13 +35,86 @@ body {
     height: 100%;
 }
 
+/**:where(a, button, [role="button"], [role="link"]):focus-visible {
+    border: .1rem solid var(--color-white);
+    border-radius: .5rem;
+    padding: .3rem;
+}*/
+
 .df-app {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    grid-gap: 2rem;
     justify-content: center;
     max-width: var(--app-container-max-width);
-    width: 100%;
-    height: 100%;
     margin: 0 auto;
     padding: 5rem;
 }
+
+/* begin:Header */
+.df-header {
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 2rem;
+    align-items: center;
+}
+
+.df-header__title {
+    font-size: 3.2rem;
+    @media (max-width: 767.98px) {
+        font-size: 2.4rem;
+    }
+}
+/* end:Header */
+
+/* begin:Theme switcher */
+.df-theme-switcher {
+    display: flex;
+    grid-gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+.df-theme-switcher__title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    @media (max-width: 767.98px) {
+        font-size: 1.4rem;
+    }
+}
+
+.df-theme-switcher__icon-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    @media (max-width: 767.98px) {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.df-theme-switcher__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.df-app[data-theme="dark"] .df-theme-switcher__icon[data-theme="light"] {
+    opacity: 1;
+    z-index: 1;
+}
+
+.df-app[data-theme="light"] .df-theme-switcher__icon[data-theme="dark"] {
+    opacity: 1;
+    z-index: 1;
+}
+/* end:Theme switcher */

@@ -18,17 +18,19 @@
 	<title>Dev finder pet project</title>
 </head>
 <body>
-<div class="df-app">
+<div class="df-app" data-theme="dark">
+
 	<header class="df-header">
 		<h1 class="df-header__title">Dev finder</h1>
-		<div class="df-theme-switcher">
-			<span class="df-theme-switcher__title">Dark</span>
-			<div class="df-theme-switcher__icon-box">
-				<img class="df-theme-switcher__icon" src="assets/icons/icon-theme-dark.svg" alt="" >
-				<img class="df-theme-switcher__icon" src="assets/icons/icon-theme-light.svg" alt="" >
-			</div>
-		</div>
+		<button class="df-theme-switcher" type="button">
+			<span class="df-theme-switcher__title">Light</span>
+			<span class="df-theme-switcher__icon-box">
+				<img class="df-theme-switcher__icon" src="assets/icons/icon-theme-dark.svg" data-theme="dark" alt="" >
+				<img class="df-theme-switcher__icon" src="assets/icons/icon-theme-light.svg" data-theme="light" alt="" >
+			</span>
+		</button>
 	</header>
+
 	<main class="df-main">
 
 		<!-- begin:Search panel -->

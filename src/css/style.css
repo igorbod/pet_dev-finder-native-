@@ -1,4 +1,5 @@
 :root {
+    color-scheme: light dark;
     /* fonts */
     --font-default: "Poppins", sans-serif;
     --fw-default: 400;
@@ -25,6 +26,10 @@
     --btn-bg-default: var(--color-white);
     --btn-bg-hover: #f3f3f3;
     --btn-bg-active: #c7c5c5;
+
+    /* theme switcher */
+    --theme-switcher-box-shadow--dark: 0 0 0 .2rem rgb(0, 0, 0, .2);
+    --theme-switcher-box-shadow--light: 0 0 0 .2rem rgb(0, 0, 0, .2);
 
     /* other */
     --app-container-max-width: 120rem;
@@ -168,58 +173,95 @@ body {
 
 /* begin:Theme switcher */
 .df-theme-switcher {
-    display: flex;
-    grid-gap: 1rem;
-    align-items: center;
-    cursor: pointer;
-}
-
-.df-theme-switcher__title {
-    font-size: 1.8rem;
-    text-transform: uppercase;
-}
-
-@media (max-width: 767.98px) {
-    .df-theme-switcher__title {
-        font-size: 1.4rem;
-    }
-}
-
-.df-theme-switcher__icon-box {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-}
-@media (max-width: 767.98px) {
-    .df-theme-switcher__icon-box {
-        width: 2rem;
-        height: 2rem;
-    }
+    padding: .2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: none;
 }
 
-.df-theme-switcher__icon {
+.df-theme-switcher__legend {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
     opacity: 0;
     pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 0;
 }
 
-.df-app[data-theme="dark"] .df-theme-switcher__icon[data-theme="light"] {
-    opacity: 1;
-    z-index: 1;
+.df-theme-switcher__radio {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    transition: filter 0.1s ease-in;
 }
 
-.df-app[data-theme="light"] .df-theme-switcher__icon[data-theme="dark"] {
-    opacity: 1;
-    z-index: 1;
+.df-theme-switcher__radio:focus {
+    outline: none;
+}
+
+.df-theme-switcher__radio_light {
+    background-image: url('../assets/icons/icon-theme_sun.svg');
+}
+
+.df-theme-switcher__radio_auto {
+    background-image: url('../assets/icons/icon-theme_system.svg');
+}
+
+.df-theme-switcher__radio_dark {
+    background-image: url('../assets/icons/icon-theme_moon.svg');
+}
+
+.df-theme-switcher__state {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    inset: 0;
+    z-index: -1;
+    box-shadow: var(--theme-switcher-box-shadow--dark);
+    border-radius: 2.4rem;
+    background-color: var(--color-white-opacity-25);
+    pointer-events: none;
+    padding: .1rem;
+}
+
+.df-theme-switcher__state-inner {
+    position: relative;
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: var(--color-main-dark);
+    border-radius: 50%;
+    transition: transform ease-in .1s;
+}
+
+/*.df-theme-switcher__radio:focus-visible ~ .df-theme-switcher__state .df-theme-switcher__state {
+    box-shadow: 0 0 0 .2rem #000000;
+}*/
+
+.df-theme-switcher__radio_light:checked ~ .df-theme-switcher__state .df-theme-switcher__state-inner {
+    transform: translateX(0);
+}
+
+.df-theme-switcher__radio_auto:checked ~ .df-theme-switcher__state .df-theme-switcher__state-inner {
+    transform: translateX(calc(1.6rem + 50% - .2rem));
+}
+
+.df-theme-switcher__radio_dark:checked ~ .df-theme-switcher__state .df-theme-switcher__state-inner {
+    transform: translateX(calc(3.2rem + 100% - .4rem));
+}
+
+.df-theme-switcher__radio {
+    filter: invert(0);
+}
+
+.df-theme-switcher__radio:checked {
+    filter: invert(1);
+}
+
+.df-theme-switcher__state {
+    filter: invert(0);
 }
 /* end:Theme switcher */
 

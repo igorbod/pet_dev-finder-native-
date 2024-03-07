@@ -5,6 +5,17 @@
 	<meta name="viewport"
 				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="color-scheme" content="light dark">
+
+	<script>
+      if (matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+          document.documentElement.style.display = 'none';
+          document.head.insertAdjacentHTML(
+              'beforeend',
+              '<link rel="stylesheet" href="css/light.css" onload="document.documentElement.style.display=\'\'">'
+          );
+      }
+	</script>
 
 	<!--	Fonts	-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +24,10 @@
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="css/reset.css">
+
+	<link rel="stylesheet" href="css/light.css" media="(prefers-color-scheme: light)">
+	<link rel="stylesheet" href="css/dark.css" media="(prefers-color-scheme: dark)">
+
 	<link rel="stylesheet" href="css/style.css">
 
 	<title>Dev finder pet project</title>
@@ -22,13 +37,16 @@
 
 	<header class="df-header">
 		<h1 class="df-header__title">Dev finder</h1>
-		<button class="df-theme-switcher" type="button">
-			<span class="df-theme-switcher__title">Light</span>
-			<span class="df-theme-switcher__icon-box">
-				<img class="df-theme-switcher__icon" src="assets/icons/icon-theme-dark.svg" data-theme="dark" alt="" >
-				<img class="df-theme-switcher__icon" src="assets/icons/icon-theme-light.svg" data-theme="light" alt="" >
-			</span>
-		</button>
+
+		<fieldset class="df-theme-switcher">
+			<legend class="df-theme-switcher__legend">Color scheme</legend>
+			<input class="df-theme-switcher__radio df-theme-switcher__radio_light" type="radio" name="color-scheme" value="light" aria-label="Light">
+			<input class="df-theme-switcher__radio df-theme-switcher__radio_auto" type="radio" name="color-scheme" value="auto" aria-label="System" checked>
+			<input class="df-theme-switcher__radio df-theme-switcher__radio_dark" type="radio" name="color-scheme" value="dark" aria-label="Dark">
+			<div class="df-theme-switcher__state">
+				<div class="df-theme-switcher__state-inner"></div>
+			</div>
+		</fieldset>
 	</header>
 
 	<main class="df-main">

@@ -1,0 +1,46 @@
+/* begin:Theme switcher */
+.df-theme-switcher__state {
+    box-shadow: var(--theme-switcher-box-shadow--dark);
+    border-radius: 2.4rem;
+    background-color: var(--color-white-opacity-25);
+    pointer-events: none;
+    padding: .1rem;
+}
+
+.df-theme-switcher__state-inner {
+    position: relative;
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: var(--color-main-dark);
+    border-radius: 50%;
+    transition: transform ease-in .1s;
+}
+
+/*.df-theme-switcher__radio:focus-visible ~ .df-theme-switcher__state .df-theme-switcher__state {
+    box-shadow: 0 0 0 .2rem #000000;
+}*/
+
+.df-theme-switcher__radio_light:checked ~ .df-theme-switcher__state .df-theme-switcher__state-inner {
+    transform: translateX(0);
+}
+
+.df-theme-switcher__radio_auto:checked ~ .df-theme-switcher__state .df-theme-switcher__state-inner {
+    transform: translateX(calc(1.6rem + 50% - .2rem));
+}
+
+.df-theme-switcher__radio_dark:checked ~ .df-theme-switcher__state .df-theme-switcher__state-inner {
+    transform: translateX(calc(3.2rem + 100% - .4rem));
+}
+
+.df-theme-switcher__radio {
+    filter: invert(0);
+}
+
+.df-theme-switcher__radio:checked {
+    filter: invert(1);
+}
+
+.df-theme-switcher__state {
+    filter: invert(0);
+}
+/* end:Theme switcher */

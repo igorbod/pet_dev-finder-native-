@@ -57,7 +57,7 @@
 				<label class="df-search__input-label">
 					<input name="df_search_input" id="df_search_input" type="text" placeholder="Search GitHub username...">
 				</label>
-				<button id="btn_search" class="df-button" type="button">
+				<button id="btn_search" class="df-button" type="submit">
 					<span class="df-button__title">Search</span>
 				</button>
 				<div class="df-search__error"></div>
@@ -67,21 +67,21 @@
 
 		<!-- begin:User card -->
 		<div class="df-card">
-			<div class="df-card__inner d-none">
+			<div class="df-card__inner">
 				<div class="df-card__col df-card__col_info">
 					<div class="df-card__header">
 						<ul class="df-card__stats-list">
-							<li class="df-card__stats-item">
+							<li class="df-card__stats-item df-card__stats-item_repos">
 								<img class="df-card__stats-icon" src="assets/icons/icon-stats__repos.svg" alt="">
 								<span class="df-card__stats-title">394 Repos</span>
 							</li>
-							<li class="df-card__stats-item">
+							<li class="df-card__stats-item df-card__stats-item_followers">
 								<img class="df-card__stats-icon" src="assets/icons/icon-stats__followers.svg" alt="">
 								<span class="df-card__stats-title">1257 Followers</span>
 							</li>
-							<li class="df-card__stats-item">
+							<li class="df-card__stats-item df-card__stats-item_following">
 								<img class="df-card__stats-icon" src="assets/icons/icon-stats__following.svg" alt="">
-								<span class="df-card__stats-title">15 Followers</span>
+								<span class="df-card__stats-title">15 Following</span>
 							</li>
 						</ul>
 					</div>
@@ -95,29 +95,24 @@
 						</a>
 					</div>
 					<div class="df-card__user-bio">
-						<div class="df-card__user-bio-text">
-							Just say anything, George, say what ever's natural, the first thing that comes to your mind. Take that you
-							mutated son-of-a-bitch. My pine, why you. You space bastard, you killed a pine. You do? Yeah, it's 8:00.
-							Hey, McFly, I thought I told you never to come in here. Well it's gonna cost you. How much money you got on
-							you?
-						</div>
+						<div class="df-card__user-bio-text"></div>
 					</div>
 					<div class="df-card__buttons">
-						<a href="#" class="df-button">
+						<a href="#" class="df-button" id="link_to_profile_btn">
 							<span class="df-button__title">Go to profile</span>
 						</a>
 					</div>
 					<div class="df-card__extra-info">
 						<ul class="df-card__extra-info-list">
-							<li class="df-card__extra-info-item">
+							<li class="df-card__extra-info-item df-card__extra-info-item_location">
 								<span class="df-card__extra-info-title">Location</span>
 								<span class="df-card__extra-info-value">Russia</span>
 							</li>
-							<li class="df-card__extra-info-item">
+							<li class="df-card__extra-info-item df-card__extra-info-item_twitter">
 								<span class="df-card__extra-info-title">Twitter (X)</span>
 								<span class="df-card__extra-info-value">Not available</span>
 							</li>
-							<li class="df-card__extra-info-item">
+							<li class="df-card__extra-info-item df-card__extra-info-item_blog">
 								<span class="df-card__extra-info-title">Blog</span>
 								<a href="#" target="_blank" class="df-link df-card__extra-info-value">https://github.blog</a>
 							</li>
@@ -127,10 +122,10 @@
 				<div class="df-card__col df-card__col_photo">
 					<div class="df-card__joined">
 						<span>Joined</span>
-						<time datetime="2020-10-1">January 10 2020</time>
+						<time datetime="2020-10-1" class="df-card__joined-value">January 10 2020</time>
 					</div>
 					<div class="df-card__user-photo-wr">
-						<img class="df-card__user-photo" src="assets/images/user-photo.png" alt="">
+						<img class="df-card__user-photo" src="assets/icons/icon-github.svg" alt="">
 					</div>
 				</div>
 			</div>

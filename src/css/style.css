@@ -151,12 +151,12 @@ body {
     pointer-events: initial;
 }
 
-.df-app[data-state="loading"] .df-card {
+.df-app:is([data-state="loading"], [data-state="completed"]) .df-card {
     min-height: 50rem;
     opacity: 1;
 }
 
-.df-app[data-state="error"] .df-search__error {
+.df-app[data-state="invalid"] .df-search__error {
     opacity: 1;
 }
 

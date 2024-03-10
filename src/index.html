@@ -32,7 +32,7 @@
 	<title>Dev finder pet project</title>
 </head>
 <body>
-<div class="df-app" data-theme="dark">
+<div class="df-app" id="app" data-theme="dark">
 
 	<header class="df-header">
 		<h1 class="df-header__title">Dev finder</h1>
@@ -51,20 +51,23 @@
 	<main class="df-main">
 
 		<!-- begin:Search panel -->
-		<div class="df-search">
-			<img class="df-search__icon" src="assets/icons/icon-search.svg" alt="">
-			<label class="df-search__input-label">
-				<input name="df_search" id="df_search" type="text" placeholder="Search GitHub username...">
-			</label>
-			<button id="btn_search" class="df-button" type="button">
-				<span class="df-button__title">Search</span>
-			</button>
-		</div>
+		<form class="df-search" id="search_form">
+			<fieldset class="df-search__inner">
+				<img class="df-search__icon" src="assets/icons/icon-search.svg" alt="">
+				<label class="df-search__input-label">
+					<input name="df_search_input" id="df_search_input" type="text" placeholder="Search GitHub username...">
+				</label>
+				<button id="btn_search" class="df-button" type="button">
+					<span class="df-button__title">Search</span>
+				</button>
+				<div class="df-search__error"></div>
+			</fieldset>
+		</form>
 		<!-- end:Search panel -->
 
 		<!-- begin:User card -->
 		<div class="df-card">
-			<div class="df-card__inner">
+			<div class="df-card__inner d-none">
 				<div class="df-card__col df-card__col_info">
 					<div class="df-card__header">
 						<ul class="df-card__stats-list">
@@ -131,11 +134,15 @@
 					</div>
 				</div>
 			</div>
+			<div class="df-loader__wrapper">
+				<div class="df-loader"></div>
+			</div>
 		</div>
 		<!-- end:User card -->
+
 	</main>
 </div>
 
-<script src="scripts.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>

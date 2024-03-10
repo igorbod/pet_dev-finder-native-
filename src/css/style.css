@@ -146,6 +146,20 @@ body {
     padding: 5rem;
 }
 
+.df-app[data-state="loading"] .df-loader__wrapper {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.df-app[data-state="loading"] .df-card {
+    min-height: 50rem;
+    opacity: 1;
+}
+
+.df-app[data-state="error"] .df-search__error {
+    opacity: 1;
+}
+
 @media (max-width: 767.98px) {
     .df-app {
         padding: 2rem;
@@ -273,6 +287,10 @@ body {
 
 /* begin:Search panel */
 .df-search {
+    position: relative;
+}
+
+.df-search__inner {
     display: flex;
     align-items: center;
     grid-gap: 2rem;
@@ -288,8 +306,29 @@ body {
     }
 }
 
+.df-search__error {
+    position: absolute;
+    bottom: -3rem;
+    left: 2rem;
+    max-width: 100%;
+    width: fit-content;
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-white-opacity-75);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity ease .3s;
+}
+
 .df-search__input-label {
     flex-grow: 1;
+}
+
+#df_search_input {
+    width: 100%;
 }
 
 .df-search__icon {
@@ -332,9 +371,14 @@ body {
 
 /* begin:Profile card */
 .df-card {
+    position: relative;
     background-color: var(--color-bg-dark-opacity);
     border-radius: var(--border-radius-default);
+    overflow: hidden;
     padding: 4rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-default)
 }
 
 @media (max-width: 1023.98px) {
@@ -657,3 +701,91 @@ body {
     object-fit: cover;
 }
 /* end:Profile card */
+
+/* begin:Loader */
+.df-loader__wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    z-index: 10;
+    backdrop-filter: blur(3rem);
+    transition: var(--transition-default);
+    opacity: 0;
+    pointer-events: none;
+}
+.df-loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 4.8rem;
+    height: 4.8rem;
+    color: #fff;
+}
+
+.df-loader:before,
+.df-loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+}
+.df-loader:after {
+    color: #FF3D00;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+    0%,
+    100% {
+        box-shadow: .2em 0 0 0 currentcolor;
+    }
+    12% {
+        box-shadow: .2em .2em 0 0 currentcolor;
+    }
+    25% {
+        box-shadow: 0 .2em 0 0 currentcolor;
+    }
+    37% {
+        box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+    50% {
+        box-shadow: -.2em 0 0 0 currentcolor;
+    }
+    62% {
+        box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+    75% {
+        box-shadow: 0 -.2em 0 0 currentcolor;
+    }
+    87% {
+        box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}
+/* end:Loader */

@@ -1,0 +1,23 @@
+/* begin:Theme switcher */
+.df-theme-switcher__state {
+    box-shadow: var(--theme-switcher-box-shadow--dark);
+    background-color: var(--color-white-opacity-25);
+}
+
+.df-theme-switcher__state-inner {
+    background-color: var(--color-white-opacity-75);
+    filter: invert(1);
+}
+
+.df-theme-switcher__radio {
+    filter: invert(.75);
+}
+
+.df-theme-switcher__radio:checked {
+    filter: invert(0);
+}
+
+.df-theme-switcher__state {
+    filter: invert(1);
+}
+/* end:Theme switcher */

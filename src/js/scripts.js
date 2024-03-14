@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const $searchForm = document.getElementById('search_form');
   const $inputSearch = document.getElementById('df_search_input');
   const $searchError = document.querySelector('.df-search__error');
-  /*const $btnSearch = document.getElementById('btn_search');*/
 
   const $infoElements = {
     'card': document.querySelector('.df-card'),
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /**
    * @description Render extra info item html element
    * @param {object | null} data
-   * @param {string} type Type of data ('twitter' | 'blog')
+   * @param {string} itemType Type of data ('twitter' | 'blog')
    * @return {string}
    */
   function renderExtraInfoItem(data, itemType = 'twitter') {
@@ -83,19 +82,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     <li class="df-card__stats-item df-card__stats-item_repos">
                         <img class="df-card__stats-icon" src="assets/icons/icon-stats__repos.svg" alt="">
                         <span class="df-card__stats-title">
-                          ${userData?.public_repos ? userData?.public_repos + 'Repos' : '-'}
+                          ${userData?.public_repos ? userData?.public_repos + ' Repos' : '-'}
                         </span>
                     </li>
                     <li class="df-card__stats-item df-card__stats-item_followers">
                         <img class="df-card__stats-icon" src="assets/icons/icon-stats__followers.svg" alt="">
                         <span class="df-card__stats-title">
-                          ${userData?.followers ? userData?.followers + 'Followers' : '-'}
+                          ${userData?.followers ? userData?.followers + ' Followers' : '-'}
                         </span>
                     </li>
                     <li class="df-card__stats-item df-card__stats-item_following">
                         <img class="df-card__stats-icon" src="assets/icons/icon-stats__following.svg" alt="">
                         <span class="df-card__stats-title">
-                          ${userData?.following ? userData?.following + 'Following' : '-'}
+                          ${userData?.following ? userData?.following + ' Following' : '-'}
                         </span>
                     </li>
                 </ul>
@@ -119,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
               </div>
             </div>
             <div class="df-card__buttons">
-                <a href="${userUrl}" class="df-button" id="link_to_profile_btn">
+                <a href="${userUrl}" class="df-button" target="_blank" id="link_to_profile_btn">
                   <span class="df-button__title">Go to profile</span>
                 </a>
             </div>
@@ -163,9 +162,11 @@ document.addEventListener('DOMContentLoaded', function () {
    * @returns {void}
    */
   function setUserData(data = null) {
-    $infoElements.card.innerHTML = '';
+    const isCardInnerContentExist = $infoElements.card.querySelector('.df-card__inner');
+
+    isCardInnerContentExist ? isCardInnerContentExist.remove() : '';
+
     if (!data) return
-    log('data - ', data);
     $infoElements.card.insertAdjacentHTML('afterbegin', renderUserCard(data));
   }
 

@@ -154,6 +154,7 @@ body {
 .df-app:is([data-state="loading"], [data-state="completed"]) .df-card {
     min-height: 50rem;
     opacity: 1;
+    pointer-events: initial;
 }
 
 .df-app[data-state="invalid"] .df-search__error {
